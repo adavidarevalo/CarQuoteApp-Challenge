@@ -1,7 +1,6 @@
 import React, { useState} from "react"
 import Form from "./components/Form"
 import Resumen from "./components/Resumen.js"
-import Resultado from "./components/Resultado"
 import Spiner from "./components/Spiner"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
@@ -16,7 +15,6 @@ function App() {
       {spinner? <Spiner/> 
       :<div>
         <Resumen resumen={resumen}/>
-        <Resultado valor={resumen.resultado}/>
       </div> }
       <Footer/>
     </div>

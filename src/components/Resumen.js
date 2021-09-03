@@ -1,6 +1,13 @@
 import React from "react"
 import {primeraLetra} from "./helpers.js"
 import styled from '@emotion/styled';
+import { keyframes } from '@emotion/react'
+
+const fadeIn = keyframes`
+0% {opacity: 0;}
+100% {opacity: 1;}
+`
+
 
 const ResumenDiv = styled.div`
 background: #00a09f;
@@ -11,6 +18,9 @@ padding: 15px 25px;
 width: 74.5%;
 margin: 0 auto;
 max-width: 450px;
+animation-name: ${fadeIn};
+animation-duration: 1s;
+animation-fill-mode: both;
 h2{
   margin: 0;
   margin-bottom: 25px;
@@ -23,15 +33,25 @@ div{
   margin: 0;
 }
 }
+p:last-child{
+  margin: 0px auto;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 10px;
+  span{
+    font-size: 1.2rem;
+  }
+}
 @media (max-height: 700px) {
   margin-bottom: 70px;
+  background: red;
 }
 `
 
 
 
 function Resumen({resumen}) {
-    const {marca, plan, year} = resumen
+    const {marca, plan, year, resultado} = resumen
     if(marca ===undefined|| plan ===undefined || year===undefined) return null;
     console.log(resumen)
     return(
@@ -41,6 +61,7 @@ function Resumen({resumen}) {
             <p>Marca: <span>{primeraLetra(marca)}</span></p>
             <p>Año: <span>{year}</span></p>
             <p>Plan: <span>{primeraLetra(plan)}</span></p>
+            <p>El total es de: <span>${resultado}</span></p>
             </div>
         </ResumenDiv >
     )    

@@ -16,6 +16,9 @@ z-index: 1000;
 position: relative;
 margin:0 auto;
 margin-bottom:25px;
+@media (max-height: 700px) {
+  margin-bottom: 70px;
+}
 `
 
 function Spiner() {
