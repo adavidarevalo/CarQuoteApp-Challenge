@@ -23,7 +23,11 @@ div{
   margin: 0;
 }
 }
+@media (max-height: 700px) {
+  margin-bottom: 70px;
+}
 `
+
 
 
 function Resumen({resumen}) {
